@@ -57,4 +57,7 @@ public class PreferencesManager {
 
         return new Gson().fromJson(getPreferences(context).getString("USER",""),User.class);
     }
+    public static void removeUser(Context context){
+        getPreferences(context).edit().remove("USER").apply();
+    }
 }
