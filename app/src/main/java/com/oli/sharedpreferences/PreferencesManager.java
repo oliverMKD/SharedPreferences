@@ -53,4 +53,8 @@ public class PreferencesManager {
         String mapString = gson.toJson(shopModel);
         getPreferences(context).edit().putString("USER",mapString).apply();
     }
+    public static User getUser(Context context){
+
+        return new Gson().fromJson(getPreferences(context).getString("USER",""),User.class);
+    }
 }

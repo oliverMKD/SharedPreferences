@@ -11,6 +11,9 @@ public class User {
     String age;
     boolean isMale;
 
+    public User() {
+    }
+
     public User(String name, String lastname, String age, boolean isMale) {
         this.name = name;
         Lastname = lastname;

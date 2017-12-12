@@ -35,9 +35,19 @@ public class MainActivity extends AppCompatActivity {
     }
     @OnClick(R.id.Save)
     public void saveUserDetails(){
-        PreferencesManager.setFirstName(this,name.getText().toString());
-        PreferencesManager.setLastName(this,lastname.getText().toString());
-        PreferencesManager.setAge(this,age.getText().toString());
+
+//        PreferencesManager.setFirstName(this,name.getText().toString());
+//        PreferencesManager.setLastName(this,lastname.getText().toString());
+//        PreferencesManager.setAge(this,age.getText().toString());
+//        PreferencesManager.setIsMale(.isChecked(),this);
+
+
+        User user = new User();
+        user.setName(name.getText().toString());
+        user.setLastname(lastname.getText().toString());
+        user.setAge(age.getText().toString());
+        PreferencesManager.addUser(user,this);
+
         Toast.makeText(this,"user details saved",Toast.LENGTH_LONG).show();
 
 
