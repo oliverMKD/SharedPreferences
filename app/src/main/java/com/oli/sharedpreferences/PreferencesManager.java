@@ -19,11 +19,11 @@ public class PreferencesManager {
     }
 
     public static String getFirstname(Context context){
-        return getPreferences(context).getString("firstName","no name");
+        return getPreferences(context).getString("FirstName","no name");
     }
 
     public static void setFirstName(Context context,String firstName){
-        getPreferences(context).edit().putString("firstName",firstName).apply();
+        getPreferences(context).edit().putString("FirstName",firstName).apply();
     }
     public static String getLastName(Context context){
         return getPreferences(context).getString("LastName","no name");
@@ -38,11 +38,11 @@ public class PreferencesManager {
     public static void setAge(Context context,String age) {
         getPreferences(context).edit().putString("Age", age).apply();
     }
-    public static String getSex(Context context){
-        return getPreferences(context).getString("Sex","no age");
-    }
-
-    public static void setSex(Context context,String sex) {
-        getPreferences(context).edit().putString("Sex", sex).apply();
-    }
+//    public static boolean isMale(Context context){
+//        return getPreferences(context).getString("Sex","no age");
+//    }
+//
+//    public static void setSex(Context context,String sex) {
+//        getPreferences(context).edit().putString("Sex", sex).apply();
+//    }
 }

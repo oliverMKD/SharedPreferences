@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class Main2Activity extends AppCompatActivity {
@@ -23,17 +24,21 @@ public class Main2Activity extends AppCompatActivity {
     TextView text5;
     @BindView(R.id.text6)
     TextView textAge;
+    @BindView(R.id.text7)
+    TextView textPol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        ButterKnife.bind(this);
     }
     @OnClick(R.id.kopceLoad)
     public void showUserDetails(){
         textIme.setText(PreferencesManager.getFirstname(this));
         textPrezime.setText(PreferencesManager.getLastName(this));
         textAge.setText(PreferencesManager.getAge(this));
+
 
     }
 }
