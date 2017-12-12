@@ -35,9 +35,18 @@ public class Main2Activity extends AppCompatActivity {
     }
     @OnClick(R.id.kopceLoad)
     public void showUserDetails(){
-        textIme.setText(PreferencesManager.getFirstname(this));
-        textPrezime.setText(PreferencesManager.getLastName(this));
-        textAge.setText(PreferencesManager.getAge(this));
+//        textIme.setText(PreferencesManager.getFirstname(this));
+//        textPrezime.setText(PreferencesManager.getLastName(this));
+//        textAge.setText(PreferencesManager.getAge(this));
+
+
+        User user = PreferencesManager.getUser(this);
+
+        if (user!=null){
+            textIme.setText(user.getName());
+            textPrezime.setText(user.getLastname());
+            textAge.setText(user.getAge());
+        }
 
 
     }

@@ -43,13 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         User user = new User();
-        user.setName(name.getText().toString());
-        user.setLastname(lastname.getText().toString());
-        user.setAge(age.getText().toString());
-        PreferencesManager.addUser(user,this);
+        if (user!=null) {
+            user.setName(name.getText().toString());
+            user.setLastname(lastname.getText().toString());
+            user.setAge(age.getText().toString());
+            PreferencesManager.addUser(user, this);
 
-        Toast.makeText(this,"user details saved",Toast.LENGTH_LONG).show();
-
+            Toast.makeText(this, "user details saved", Toast.LENGTH_LONG).show();
+        }
 
     }
     @OnClick(R.id.Continue)
