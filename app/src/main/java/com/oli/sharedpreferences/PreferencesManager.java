@@ -19,10 +19,10 @@ public class PreferencesManager {
     }
 
     public static String getFirstname(Context context){
-        return getPreferences(context).getString("FirstName","no name");
+        return getPreferences(context).getString("firstName","no name");
     }
 
     public static void setFirstName(Context context,String firstName){
-        getPreferences(context).edit().putString("FirstName",firstName).apply();
+        getPreferences(context).edit().putString("firstName",firstName).apply();
     }
 }
