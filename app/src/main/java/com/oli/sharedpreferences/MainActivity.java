@@ -1,5 +1,6 @@
 package com.oli.sharedpreferences;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,8 +36,14 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.Save)
     public void saveUserDetails(){
         PreferencesManager.setFirstName(this,name.getText().toString());
+        PreferencesManager.setLastName(this,lastname.getText().toString());
+        PreferencesManager.setAge(this,age.getText().toString());
         Toast.makeText(this,"user details saved",Toast.LENGTH_LONG).show();
 
 
+    }
+    @OnClick(R.id.Continue)
+    public void Klik(View view){
+        startActivity(new Intent(this,Main2Activity.class));
     }
 }

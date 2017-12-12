@@ -12,7 +12,17 @@ public class Main2Activity extends AppCompatActivity {
     @BindView(R.id.kopceLoad)
     Button kopceLoad;
     @BindView(R.id.text1)
+    TextView text1;
+    @BindView(R.id.text2)
     TextView textIme;
+    @BindView(R.id.text3)
+    TextView text3;
+    @BindView(R.id.text4)
+    TextView textPrezime;
+    @BindView(R.id.text5)
+    TextView text5;
+    @BindView(R.id.text6)
+    TextView textAge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +32,8 @@ public class Main2Activity extends AppCompatActivity {
     @OnClick(R.id.kopceLoad)
     public void showUserDetails(){
         textIme.setText(PreferencesManager.getFirstname(this));
+        textPrezime.setText(PreferencesManager.getLastName(this));
+        textAge.setText(PreferencesManager.getAge(this));
+
     }
 }
