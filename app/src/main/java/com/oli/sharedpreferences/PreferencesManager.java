@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.google.gson.Gson;
+
 /**
  * Created by oliver on 12/12/2017.
  */
 
 public class PreferencesManager {
-//    private static final String ISMALE = "ISMALE";
+    private static final String ISMALE = "ISMALE";
 //    private static final String FIRSTNAME = "firstname";
 //    private static final String LASTNAME = "lastname";
 //    private static final String AGE = "age";
@@ -38,11 +40,17 @@ public class PreferencesManager {
     public static void setAge(Context context,String age) {
         getPreferences(context).edit().putString("Age", age).apply();
     }
-//    public static boolean isMale(Context context){
-//        return getPreferences(context).getString("Sex","no age");
-//    }
+    public static boolean isMale(Context context){
+        return getPreferences(context).getBoolean(ISMALE,false);
+    }
 //
-//    public static void setSex(Context context,String sex) {
-//        getPreferences(context).edit().putString("Sex", sex).apply();
-//    }
+    public static void setIsMale(boolean IsMale,Context context) {
+        getPreferences(context).edit().putBoolean(ISMALE, IsMale).apply();
+    }
+
+    public static void addUser(User shopModel,Context context){
+        Gson gson = new Gson();
+        String mapString = gson.toJson(shopModel);
+        getPreferences(context).edit().putString("USER",mapString).apply();
+    }
 }
